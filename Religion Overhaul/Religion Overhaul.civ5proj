@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Deploy" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <ProjectGuid>{feed020e-3930-4f43-be4d-65f754ab616f}</ProjectGuid>
+    <Name>[Self] Religion Overhaul</Name>
+    <Guid>3f725f42-9f1b-4931-9f65-7e7110d72bc0</Guid>
+    <ModVersion>1</ModVersion>
+    <Stability>Alpha</Stability>
+    <Teaser>Numerous changes to religion:
+
+- Missionaries take 50 attrition outside of friendly lands, and take 250 attrition in lands th</Teaser>
+    <Description>Numerous changes to religion:
+
+- Missionaries take 50 attrition outside of friendly lands, and take 250 attrition in lands that are a different religion from the missionaries if the land is not friendly.
+
+- City size affects the strength of religious pressure.</Description>
+    <Authors>Cam</Authors>
+    <SpecialThanks>
+    </SpecialThanks>
+    <AffectsSavedGames>true</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>true</SupportsSinglePlayer>
+    <SupportsMultiplayer>true</SupportsMultiplayer>
+    <SupportsHotSeat>true</SupportsHotSeat>
+    <SupportsMac>true</SupportsMac>
+    <AssemblyName>Religion Overhaul</AssemblyName>
+    <RootNamespace>Religion Overhaul</RootNamespace>
+    <ModReferences />
+    <ModActions>
+      <Action xmlns="">
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>Missionaries/Unwelcome_Evangelist/Civ5UnitPromotions.xml</FileName>
+      </Action>
+    </ModActions>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Package Only' ">
+    <PackageMod>true</PackageMod>
+    <DeployMod>false</DeployMod>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Deploy Only' ">
+    <PackageMod>false</PackageMod>
+    <DeployMod>true</DeployMod>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Missionaries" />
+    <Folder Include="Missionaries\Unfriendly_Lands" />
+    <Folder Include="Missionaries\Unwelcome_Evangelist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Missionaries\Unfriendly_Lands\Unfriendly_Lands_Attrition.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Missionaries\Unwelcome_Evangelist\Civ5UnitPromotions.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Firaxis\ModBuddy\Civ5Mod.targets" />
+</Project>

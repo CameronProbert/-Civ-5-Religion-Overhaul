@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by ModBuddy on 8/26/2015 12:23:50 AM -->
+<GameData>
+
+	<!--Lose only 150 in enemy territory, balanced by losing more in non-friendly territory-->
+	
+	<UnitPromotions>
+		<Update>
+			<Where Type="PROMOTION_UNWELCOME_EVANGELIST"/>
+			<Set ReligiousStrengthLossRivalTerritory="15"></Set>
+		</Update>
+	</UnitPromotions>
+
+	<Language_en_US>
+		<Update>
+			<Where Tag="TXT_KEY_PROMOTION_UNWELCOME_EVANGELIST_HELP"/>
+			<Set Text="Can enter rival territory without open borders but loses 15% of original religious strength for each turn they end on such a tile. Unit is eliminated when religious strength is 0."/>
+		</Update>
+	</Language_en_US>
+  
+</GameData>
